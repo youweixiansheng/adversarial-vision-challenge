@@ -128,7 +128,7 @@ class TinyImageNetBSONModel(Model, HTTPClient):
         self._base_url = url
 
         super(TinyImageNetBSONModel, self).__init__(
-            bounds=(0, 255), channel_axis=3)
+            bounds=(0, 1), channel_axis=1)
 
     def _url(self, path=''):
         return parse.urljoin(self._base_url, path)
