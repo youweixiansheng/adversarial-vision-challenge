@@ -137,9 +137,10 @@ def test_model(directory, no_cache, no_build, gpu):
     correct = 0
 
     for image, label in tqdm(test_samples):
+        print('model image',model(image),'label',label)
         if model(image) == label:
             correct += 1
-
+    print('model',dir(model))
     print('The top-1 performance of your model is {}%.'.format(
         100 * correct / float(len(test_samples))))
 
